@@ -1,21 +1,13 @@
 import type {APIRoute} from "astro";
 import {getCollection} from "astro:content";
 
-export const prerender =  false;
+export const prerender = false;
 
 export const GET: APIRoute = async ({params,request}) => {
 
-    const url = new URL(request.url);
-
-    const searchParams = url.searchParams;
-    const id = searchParams.get('id')
-    // if (!id) return new Response('Not Found',{
-    //     status: 400,
-    //     headers: {'Content-Type': 'application/json'}
-    // });
     const posts = (await getCollection('blog'))
         .map(item => item)
-        .find(item => item.id === id);
+        .find(item => item.id === params.id);
     if (!posts) {
         return new Response('Not Found',{
             status: 404,
