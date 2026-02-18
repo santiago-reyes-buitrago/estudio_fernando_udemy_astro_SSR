@@ -22,3 +22,32 @@ export const GET: APIRoute = async ({params,request}) => {
         }
     )
 }
+
+export const POST: APIRoute = async ({params,request}) => {
+    const post = await request.json();
+    return new Response(JSON.stringify(post),
+        {
+            status: 200,
+            headers: {'Content-Type': 'application/json'}
+        }
+    )
+}
+
+export const PUT: APIRoute = async ({params,request}) => {
+    const post = await request.json();
+    return new Response(JSON.stringify({id: params.id,...post}),
+        {
+            status: 200,
+            headers: {'Content-Type': 'application/json'}
+        }
+    )
+}
+
+export const DELETE: APIRoute = async ({params}) => {
+    return new Response(JSON.stringify({id: params.id}),
+        {
+            status: 200,
+            headers: {'Content-Type': 'application/json'}
+        }
+    )
+}
