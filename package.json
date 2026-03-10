@@ -9,11 +9,13 @@
     "astro": "astro"
   },
   "dependencies": {
-    "@astrojs/mdx": "^4.3.13",
-    "@astrojs/node": "^9.5.2",
-    "@astrojs/rss": "^4.0.15",
-    "@astrojs/sitemap": "^3.7.0",
-    "astro": "^5.17.1",
+    "@astrojs/db": "^0.20.0",
+    "@astrojs/mdx": "5.0.0",
+    "@astrojs/node": "10.0.0",
+    "@astrojs/rss": "4.0.16",
+    "@astrojs/sitemap": "3.7.1",
+    "astro": "6.0.0",
+    "drizzle-zod": "^0.8.3",
     "sharp": "^0.34.5"
   }
 }
